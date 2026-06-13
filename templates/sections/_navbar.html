@@ -1,0 +1,12 @@
+<nav class="bg-surface text-secondary p-1 px-2 border-b border-gray-800 flex justify-between items-center shadow-2">
+    <div class="flex items-center space-x-1">
+        <!-- Logo -->
+        <h1 class="text-xl font-bold tracking-tight">VIMS NayePankh</h1>
+    </div>
+    <div class="space-x-1 text-sm font-medium">
+        <a href="/" class="hover:text-gray-300 focus-visible:ring-2 focus-visible:outline-white focus-visible:ring-offset-2 rounded-xs px-1 py-0.5 transition-colors duration-fast">Dashboard</a>
+        {% if user.is_staff %}
+            <a href="/admin/" class="hover:text-gray-300 focus-visible:ring-2 focus-visible:outline-white focus-visible:ring-offset-2 rounded-xs px-1 py-0.5 transition-colors duration-fast">Admin Panel</a>
+        {% endif %}
+    </div>
+</nav>
