@@ -17,9 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from volunteer.views import DashboardView
+from volunteer.urls import router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', DashboardView.as_view(), name='home'),
     path('volunteer/', include('volunteer.urls')),
+    path('api/', include(router.urls)),
+    path('accounts/', include('allauth.urls')),
+    
 ]

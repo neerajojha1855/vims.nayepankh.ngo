@@ -17,7 +17,7 @@ django-filter
 #flask
 
 # Authentication
-#django-allauth
+django-allauth
 #django-cloudflare
 #google-auth
 #django-google-sso

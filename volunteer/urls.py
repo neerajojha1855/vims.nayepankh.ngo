@@ -4,8 +4,8 @@ from .api_views import VolunteerViewSet, TaskViewSet
 from .views import export_volunteers_csv, export_volunteers_pdf
 
 router = DefaultRouter()
-router.register(r'api/volunteers', VolunteerViewSet)
-router.register(r'api/tasks', TaskViewSet)
+router.register(r'volunteers', VolunteerViewSet)
+router.register(r'tasks', TaskViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

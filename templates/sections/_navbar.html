@@ -3,10 +3,19 @@
         <!-- Logo -->
         <h1 class="text-xl font-bold tracking-tight">VIMS NayePankh</h1>
     </div>
-    <div class="space-x-1 text-sm font-medium">
+    <div class="space-x-1 text-sm font-medium flex items-center">
         <a href="/" class="hover:text-gray-300 focus-visible:ring-2 focus-visible:outline-white focus-visible:ring-offset-2 rounded-xs px-1 py-0.5 transition-colors duration-fast">Dashboard</a>
         {% if user.is_staff %}
             <a href="/admin/" class="hover:text-gray-300 focus-visible:ring-2 focus-visible:outline-white focus-visible:ring-offset-2 rounded-xs px-1 py-0.5 transition-colors duration-fast">Admin Panel</a>
+        {% endif %}
+    
+        {% if user.is_authenticated %}
+            <form action="{% url 'account_logout' %}" method="post" class="inline flex items-center">
+                {% csrf_token %}
+                <button type="submit" class="flex items-center justify-center w-9 h-9 text-red-800 bg-white border-2 border-red-800 rounded-full hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800 transition-colors duration-200 shadow-sm">
+                    <i class="ri-logout-box-r-line text-lg"></i>
+                </button>
+            </form>
         {% endif %}
     </div>
 </nav>
