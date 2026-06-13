@@ -1,0 +1,42 @@
+# Core Dependencies
+Django
+django-tailwind
+
+# REST Framework
+#djangorestframework
+#djangorestframework_api_key
+#djangorestframework_simplejwt
+
+# FastAPI
+#fastapi
+
+# Flask
+#flask
+
+# Authentication
+#django-allauth
+#django-cloudflare
+#google-auth
+#django-google-sso
+#django-github-sso
+
+# AI Integration
+#google-genai
+#nltk
+#spacy
+
+# Virtual Environment
+python-dotenv
+
+# Database
+dj-database-url
+psycopg2-binary
+#redis
+#celery
+
+# Image & Video Storage
+#django-cloudinary-storage
+
+# Production Dependencies
+gunicorn
+whitenoise[brotli]
