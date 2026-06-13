@@ -3,9 +3,12 @@ Django
 django-tailwind
 
 # REST Framework
-#djangorestframework
+djangorestframework
 #djangorestframework_api_key
 #djangorestframework_simplejwt
+
+
+django-filter
 
 # FastAPI
 #fastapi

@@ -5,10 +5,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>VIMS - NayePankh Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
     {% tailwind_css %}
 </head>
-<body>
-    <h1 class="">Volunteer Information Management System</h1>
+<body class="font-sans bg-surface text-secondary min-h-screen">
+    <nav class="p-1 border-b border-gray-800 flex justify-between items-center">
+        <h1 class="text-xl font-bold">VIMS</h1>
+        <div class="space-x-1">
+            <a href="/" class="hover:text-gray-300">Dashboard</a>
+            {% if user.is_staff %} <a href="/admin/" class="hover:text-gray-300">Admin Panel</a> {% endif %}
+        </div>
+    </nav>
+
+    <main class="p-1 md:p-2">
+        {% block content %}
+        <div class="bg-primary p-2 rounded-xs text-secondary shadow-lg">
+            <h2 class="text-3xl font-bold mb-1">Welcom to Volunteer Management</h2>
+            <p class="mb-2">Manage your volunteers, assign tasks and generate reports.</p>
+            <a href="/admin/" class="bg-secondary text-inverse px-1 py-2 rounded-xs font-bold hover:bg-gray-200 focus-visible: outline-white focus-visible:ring-2">Go to Admin Dashboard</a>
+        </div>
+        {% endblock %}
+    </main>
+
 </body>
 </html>
