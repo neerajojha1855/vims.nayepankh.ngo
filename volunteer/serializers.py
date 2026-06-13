@@ -9,6 +9,11 @@ class UserSerializer(serializers.ModelSerializer):
 
 class VolunteerSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
+    user_id = serializers.PrimaryKeyRelatedField(
+        queryset=User.objects.all(),
+        source='user',
+        write_only=True,
+    )
 
     class Meta:
         model = Volunteer

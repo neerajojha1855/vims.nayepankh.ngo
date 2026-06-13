@@ -1,5 +1,8 @@
 import csv
 from django.http import HttpResponse
+from django.template.loader import get_template
+from xhtml2pdf import pisa
+from io import BytesIO
 from .models import Volunteer, Task
 from django.views.generic import TemplateView
 from django.shortcuts import render
@@ -36,4 +39,24 @@ def export_volunteers_csv(request):
             volunteer.joined_date.strftime('%d-%m-%Y')
         ])
     
+    return response
+
+def export_volunteers_pdf(request):
+    volunteers = Volunteer.objects.all().order_by('-joined_date')
+    template_path = 'reports/volunteer_pdf.html'
+    context = {'volunteers': volunteers}
+
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="volunteers_report.pdf"'
+
+    template = get_template(template_path)
+    html = template.render(context)
+
+    pisa_status = pisa.CreatePDF(
+        html,
+        dest=response
+    )
+
+    if pisa_status.err:
+        return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response

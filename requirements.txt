@@ -23,6 +23,9 @@ django-filter
 #django-google-sso
 #django-github-sso
 
+# PDF Generation & Download Report
+xhtml2pdf
+
 # AI Integration
 #google-genai
 #nltk

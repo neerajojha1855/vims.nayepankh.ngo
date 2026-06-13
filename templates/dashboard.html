@@ -8,13 +8,16 @@
             <h2 class="text-3xl font-bold text-primary mb-0.5">Volunteer Dashboard</h2>
             <p class="text-gray-600 text-sm">Overview of your organization's volunteers and upcoming tasks.</p>
         </div>
-        <div class="mt-1 md:mt-0">
+        <div class="mt-1 md:mt-0 flex space-x-2">
+            <!-- Export CSV Button -->
             <a href="{% url 'export_volunteers' %}" class="inline-flex items-center bg-surface text-secondary hover:bg-gray-800 px-1 py-2 rounded-xs font-bold text-sm transition-colors duration-fast focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-surface">
-                <svg class="w-4 h-4 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-41-4 4m0 01-4-4m4 4V4"></path>
-                </svg>
-                Export CSV
+                <i class="ri-file-excel-2-line mr-1 text-lg"></i>Export CSV
             </a>
+
+            <!-- Export PDF Button -->
+             <a href="{% url 'export_volunteers_pdf' %}" class="inline-flex items-center bg-red-600 text-white hover:bg-red-700 px-1 py-2 rounded-xs font-bold text-sm transition-colors duration-fast focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-600">
+                <i class="ri-file-pdf-2-line mr-1 text-lg"></i>Export PDF
+             </a>
         </div>
     </div>
 
