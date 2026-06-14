@@ -8,6 +8,13 @@
         {% if user.is_staff %}
             <a href="/admin/" class="hover:text-gray-300 focus-visible:ring-2 focus-visible:outline-white focus-visible:ring-offset-2 rounded-xs px-1 py-0.5 transition-colors duration-fast">Admin Panel</a>
         {% endif %}
+
+        <a href="{% url 'volunteer-list' %}" title="Add Volunteer" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-secondary">
+            <i class="ri-team-line"></i>
+        </a>
+        <a href="{% url 'task-list' %}" title="Add Task" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-secondary">
+            <i class="ri-task-line"></i>
+        </a>
     
         {% if user.is_authenticated %}
             <form action="{% url 'account_logout' %}" method="post" class="inline flex items-center">
