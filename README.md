@@ -29,7 +29,7 @@ This is a Djnago-based web application designed to manage volunteers, track task
 ### 2. Clone the Repository
 ```
 git clone https://github.com/neerajojha1855/vims.nayepankh.ngo/
-cd 
+cd vims.nayepankh.ngo
 
 python -m venv .venv
 source .venv/Scripts/activate
